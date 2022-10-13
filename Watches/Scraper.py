@@ -45,9 +45,10 @@ def headers_values(table_html):
     
 
 ids = watch_ids(url, headers)
-for i in range(3):
+for i in range(50):
     id = ids[i]
     table = get_watch_page(id)
-    watch = headers_values(table)
+    raw = headers_values(table)
+    watch = raw.loc[:,~raw.columns.duplicated()]
     dataf = pd.concat([watch,dataf])
 print(dataf)
