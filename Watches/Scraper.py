@@ -51,3 +51,4 @@ for i in range(3):
     watch = headers_values(table)
     dataf = pd.concat([watch,dataf])
 print(dataf)
+dataf.to_csv('out.csv',index=False)
